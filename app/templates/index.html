@@ -1,0 +1,23 @@
+<head>
+
+	<title>Our Project</title>
+
+</head>
+
+<body>
+	<h1>Testing</h1>
+	<form action="" method="post" novalidate>
+		{{ form.hidden_tag() }}
+		<p>
+			{{form.time.label }}<br>
+			{{form.time }}
+	    </p>
+	    <p>
+	    	{{form.topic.label }}<br>
+	    	{{form.topic }}
+	    </p>
+	    <p>
+	    	{{form.submit() }}
+	    </p>
+	</form>
+</body>
