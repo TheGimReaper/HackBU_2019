@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from collections import Counter
 from string import punctuation
+from string import whitespace
 
 def callApi(preference):
     url = "https://newsapi.org/v2/everything?q="+preference+"&from=2019-02-09&sortBy=publishedAt&apiKey=60941ffff9a04202b7b6f8124c3a2a46";
@@ -27,8 +28,12 @@ def calculateWordCount(url):
 def dictionaryCount(dictionary):
     count = 0
     for key in dictionary:
-        count = count + dictionary[key]
+        #skip key on empty stirng
+        index = 0;
+        while((index < len(key) && (key[index] in whitespace)):
+            index++
+        if(index != len(key)):
+            count = count + dictionary[key]
     return count
 
 #callApi("URI")
-
