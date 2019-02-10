@@ -13,7 +13,7 @@ def callApi(preference):
 
     #API set preference
 
-#    call = {'q':None, 'sources':None, 'domains':None, 'from':None, 'to':None, 'language':'en', 'sort_by':None, 'country':None, 'category':None, 'page_size':None,'page':None}
+   call = {'q':None, 'sources':None, 'domains':None, 'from':None, 'to':None, 'language':'en', 'sort_by':None, 'country':None, 'category':None, 'page_size':None,'page':None}
 
     for key in preference.keys():
         call[key] = preference[key]
@@ -51,8 +51,8 @@ def callApi(preference):
 def calculateWordCount(content):
 
     char_counter = 0
-    characters = re.sub('[+* chars]$','',content)
-    char_counter = (int)content[len(characters)+2:-7] + len(characters)
+    characters = re.sub('\[\+[1-9]* chars\]$','',content)
+    char_counter = int(content[len(characters)+2:-7]) + len(characters))
     return char_counter/WORD_SIZE
 
 
