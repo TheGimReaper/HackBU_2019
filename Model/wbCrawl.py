@@ -1,8 +1,5 @@
-import requests
+
 import re
-from bs4 import BeautifulSoup
-from collections import Counter
-from string import punctuation
 from string import whitespace
 from newsapi import NewsApiClient
 from constant import *
