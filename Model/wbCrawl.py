@@ -3,11 +3,20 @@ from bs4 import BeautifulSoup
 from collections import Counter
 from string import punctuation
 from string import whitespace
+from newsapi import NewsApiClient
 
 def callApi(preference):
-    url = "https://newsapi.org/v2/everything?q="+preference+"&from=2019-02-09&sortBy=publishedAt&apiKey=60941ffff9a04202b7b6f8124c3a2a46";
+
+    #setting up news api variabels
+    newsapi = NewsApiClient(api_key='60941ffff9a04202b7b6f8124c3a2a46')
+
+    top_headlines = newsapi.get_top_headlines(preference)
+    
+#    url = "https://newsapi.org/v2/top_headlines?q="+preference+"&from=2019-02-09&sortBy=publishedAt&apiKey=60941ffff9a04202b7b6f8124c3a2a46";
     urls = {}
-    response = requests.get(url)
+#    response = requests.get(url)
+
+    response = newsapi.get_sources()
     return response
 
 
