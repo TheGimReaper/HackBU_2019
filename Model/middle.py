@@ -18,7 +18,10 @@ def getPreference(preference, time):
             if wordCount/time < READING_SPEED:
                 url = {}
                 url["url"] = response.json()["articles"][i]["url"]
-
+                url["title"] = response.json()["article"][i]["title"]
+                url["author"] = response.json()["article"][i]["author"]
+                url["urlToImage"] = response.json()["article"][i]["urlToImage"]
+                url["readTime"] = wordCount/READING_SPEED
                 url["wordCount"] = wordCount
                 urls[counter] = url
                 counter = counter + 1
