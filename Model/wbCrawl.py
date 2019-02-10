@@ -3,11 +3,47 @@ from bs4 import BeautifulSoup
 from collections import Counter
 from string import punctuation
 from string import whitespace
+from newsapi import NewsApiClient
 
 def callApi(preference):
-    url = "https://newsapi.org/v2/everything?q="+preference+"&from=2019-02-09&sortBy=publishedAt&apiKey=60941ffff9a04202b7b6f8124c3a2a46";
+
+    #API Init
+    newsapi = NewsApiClient(api_key='60941ffff9a04202b7b6f8124c3a2a46')
+
+    #API set preference
+
+    call = {'q':None, 'sources':None, 'domains':None, 'from':None, 'to':None, 'language':'en', 'sort_by':None, 'country':None, 'category':None, 'page_size':None,'page':None}
+
+    for key in preference.keys():
+        call[key] = preference[key]
+
+    '''     GET EVERYTHING CALL CAN TAKE FOLLOWING
+
+        q                   sources
+        country             category
+        page_size           page
+
+    '''
+
+    #API call for top headline articles
+    response = newsapi.get_top_headlines(q=call['q'],sources=call['sources'],country=call['country'],category=call['category'],pageSize=call['page_size'],page=call['page'])
+
+    #API call for all news articles
+    '''     GET EVERYTHING CALL CAN TAKE FOLLOWING
+
+        q                   sources
+        domains             from
+        to                  language
+        sort_by             page_size
+        page
+
+    '''
+    response = newsapi.get_everything(q=call['q'],sources=call['sources'],domains=call['domains'],from_param=call['from'],to=call['to'],language=call['language'],sort_by=call['sort_by'],page_size=call['page_size'],page=call['page'])
+
+#    url = "https://newsapi.org/v2/top_headlines?q="+preference+"&from=2019-02-09&sortBy=publishedAt&apiKey=60941ffff9a04202b7b6f8124c3a2a46";
     urls = {}
-    response = requests.get(url)
+#    response = requests.get(url)
+
     return response
 
 
