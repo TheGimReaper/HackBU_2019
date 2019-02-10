@@ -2,6 +2,7 @@ import json
 from constant import *
 from wbCrawl import *
 from urllib.request import urlopen
+from wbCrawl import *
 
 def getPreference(preference, time):
     response = callApi(preference)
