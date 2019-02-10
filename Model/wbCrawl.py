@@ -51,7 +51,7 @@ def callApi(preference):
 def calculateWordCount(content):
 
     char_counter = 0
-    characters = re.sub('\[\+[1-9]* chars\]$','',content)
+    characters = re.sub('\[\+[0-9]* chars\]$','',content)
     char_counter = int(content[len(characters)+2:-7]) + len(characters))
     return char_counter/WORD_SIZE
 
