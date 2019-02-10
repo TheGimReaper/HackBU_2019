@@ -1,8 +1,10 @@
 import json
+import re
 from constant import *
 from wbCrawl import *
 from urllib.request import urlopen
 from wbCrawl import *
+
 
 def getPreference(preference, time):
     response = callApi(preference)
@@ -60,3 +62,24 @@ def getMore(preference, time, counter):
     urls["counter"] = counter
 
     return urls
+
+def getTime(start_location, end_location):
+
+    time_sec = 0
+    time_min = 0
+
+    origin = re.sub("\s+","+",start_location)
+    destination = re.sub("\s+","+",end_location)
+
+    origin += "+ON"
+    destination += "+ON"
+
+    response = calculateTime(origin, destination)
+
+    if response.json()["status"] != "OK":
+        print("Error has occurred")
+    else:
+        time_sec = response.json()["rows"]][0]["elements"]["duration"]["value"]
+        time_min = int(time_sec/60)
+
+    return time_min

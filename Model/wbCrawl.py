@@ -48,6 +48,7 @@ def callApi(preference):
     return response
 
 
+
 def calculateWordCount(content):
 
     char_counter = 0
@@ -88,3 +89,17 @@ def dictionaryCount(dictionary):
     return count
 
 #callApi("URI")
+
+def calculateTime(origin, destination):
+
+    # Requires Origin, Destination, and API Key
+    api_key = 'AIzaSyCniFFksn64_39YvSETuB-zVBjtMk5Xrb4'
+
+    #Optional parameters for driving or walking
+    mode = 'driving'
+
+    url = "https://maps.googleapis.com/maps/api/distancematrix/json?origins="+origin+"&destinations="+destination+"&mode="+mode+"&key="+api_key
+
+    response = request.get(url)
+
+    return response
