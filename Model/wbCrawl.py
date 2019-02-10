@@ -2,6 +2,7 @@
 import re
 from string import whitespace
 from newsapi import NewsApiClient
+from constant import *
 
 def callApi(preference):
 
@@ -10,7 +11,7 @@ def callApi(preference):
 
     #API set preference
 
-   call = {'q':None, 'sources':None, 'domains':None, 'from':None, 'to':None, 'language':'en', 'sort_by':None, 'country':None, 'category':None, 'page_size':None,'page':None}
+    call = {'q':None, 'sources':None, 'domains':None, 'from':None, 'to':None, 'language':'en', 'sort_by':None, 'country':None, 'category':None, 'page_size':None,'page':None}
 
     for key in preference.keys():
         call[key] = preference[key]

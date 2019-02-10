@@ -30,7 +30,7 @@ def index():
 	form = UserForm()
 	if form.validate_on_submit():
 		flash('Read time entered {}, topic={}'.format(form.r_time.data, form.topic.data))
-		return search(form.r_time.data, form.topic.data)
+		return render_template('results.html', dataout = search(form.r_time.data, form.topic.data))
 	return render_template('index.html', form=form)
 
 if __name__ == '__main__':
