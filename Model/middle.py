@@ -9,6 +9,7 @@ from wbCrawl import *
 def getPreference(preference, time):
     response = callApi(preference)
     urls = {}
+    urls["articles"] = []
     counter = 0
     urlCounter = 0
     if response["status"] != "ok":
@@ -28,7 +29,7 @@ def getPreference(preference, time):
                 url["urlToImage"] = response["articles"][i]["urlToImage"]
                 url["readTime"] = wordCount/READING_SPEED
                 url["wordCount"] = wordCount
-                urls[counter] = url
+                urls["articles"].append(url)
                 counter = counter + 1
                 urlCounter = i
                 if counter > MAX_NUM_ARTICLES:
@@ -41,6 +42,7 @@ def getPreference(preference, time):
 def getMore(preference, time, counter):
     response = callApi(preference)
     urls = {}
+    urls["articles"] = []
     count = 0
     if  response["status"] != "ok":
         print("Error has occurred")
@@ -53,7 +55,7 @@ def getMore(preference, time, counter):
                 url["url"] = response["articles"][i]["url"]
 
                 url["wordCount"] = wordCount
-                urls[count] = url
+                urls["articles"].append(url)
                 counter  = i
                 count = count + 1
                 if count > MAX_NUM_ARTICLES:
