@@ -12,7 +12,7 @@ def callApi(preference):
 
     #API set preference
 
-    call = {'q':None, 'sources':None, 'domains':None, 'from':None, 'to':None, 'language':'en', 'sort_by':None, 'country':None, 'category':None, 'page_size':None,'page':None}
+#    call = {'q':None, 'sources':None, 'domains':None, 'from':None, 'to':None, 'language':'en', 'sort_by':None, 'country':None, 'category':None, 'page_size':None,'page':None}
 
     for key in preference.keys():
         call[key] = preference[key]
@@ -26,7 +26,7 @@ def callApi(preference):
     '''
 
     #API call for top headline articles
-    response = newsapi.get_top_headlines(q=call['q'],sources=call['sources'],country=call['country'],category=call['category'],pageSize=call['page_size'],page=call['page'])
+    response = newsapi.get_top_headlines(q=call['q'],sources=call['sources'],country=call['country'],category=call['category'],page_size=call['page_size'],page=call['page'])
 
     #API call for all news articles
     '''     GET EVERYTHING CALL CAN TAKE FOLLOWING
