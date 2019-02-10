@@ -68,8 +68,11 @@ def getTime(start_location, end_location):
     time_sec = 0
     time_min = 0
 
-    origin = re.sub("\s+","+",start_location)
-    destination = re.sub("\s+","+",end_location)
+    origin = ''
+    destination = ''
+
+    origin += str(start_location['lat'])+','+str(start_location['lng'])
+    destination += str(end_location['lat'])+','+str(end_location['lng'])
 
     origin += "+ON"
     destination += "+ON"
