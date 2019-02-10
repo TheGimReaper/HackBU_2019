@@ -2,7 +2,8 @@
 import re
 from constant import *
 from string import whitespace
-from newsapi import NewsApiClient
+from newsapi import *
+from newsapi.newsapi_client import NewsApiClient
 from constant import *
 
 def callApi(preference):
