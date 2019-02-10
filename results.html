@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html>
+<title>Recommendations</title>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html, body
+{
+	margin:0;
+	height:100%;
+	background-image: url();
+
+
+}
+
+.main
+{
+	padding: 16px;
+	margin-top: 200px;
+}
+
+
+.search_bar {
+	padding: 10px 16px;
+	height: 80px;
+	background: lightblue url(https://i.pinimg.com/236x/ce/09/77/ce0977be93860c8325d87655bb089a87--neon-flowers-pretty-flowers.jpg);
+	background-repeat: no-repeat;
+	background-
+	background-attachment: fixed;
+	color: #f1f1f1;
+}
+
+.search_elem {
+	font-family: 'Courier New', Courier, monospace;
+}
+
+.result {
+  padding: 16px;
+}
+
+.result_elem {
+	background-color: white;
+	color: black;
+	margin: 30px;
+	padding: 1px;
+	width: 80%;
+	height: 5em;
+	
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .result + .result_elem {
+  padding-top: 102px;
+}
+
+
+</style>
+</head>
+
+<body>
+
+	<div class="search_bar" id="sb">
+		<div class="search_elem" id="se">
+			<form action = "/action-page.php">
+				Key Words: <input type = "text" name = "search"> <br>
+			</form>
+		</div>
+	</div>
+
+	<div class="result">
+		<div class="result_elem">
+			<a>1</a>
+		</div>
+		<div class="result_elem">
+			<a>2</a>
+		</div>
+		<div class="result_elem">
+			<a>3</a>
+		</div>
+		<div class="result_elem">
+			<a>4</a>
+		</div>
+		<div class="result_elem">
+			<a>5</a>
+		</div>
+		<div class="result_elem">
+			<a>6</a>
+		</div>
+		<div class="result_elem">
+			<a>7</a>
+		</div>
+		<div class="result_elem">
+			<a>8</a>
+		</div>
+		<div class="result_elem">
+			<a>9</a>
+		</div>
+		<div class="result_elem">
+			<a>10</a>
+		</div>
+	</div>
+
+	<script>
+	window.onscroll = function() {stickToTop()};
+
+	var bar = document.getElementById("sb");
+	var sticky = bar.offsetTop;
+
+	function stickToTop() {
+		if(window.pageYOffset > sticky) {
+			bar.classList.add("sticky");
+		} else {
+			bar.classList.remove("sticky");
+		}
+	}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
