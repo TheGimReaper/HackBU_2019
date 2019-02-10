@@ -18,7 +18,7 @@ def index():
 	if form.validate_on_submit():
 		flash('Read time entered {}, topic={}'.format(form.r_time.data, form.topic.data))
 		return ("%d, %s" %(form.r_time.data, form.topic.data))
-	return render_template('index.html', form=form)
+	return render_template('results.html', form=form)
 
 
 if __name__ == '__main__':
