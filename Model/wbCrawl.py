@@ -2,7 +2,6 @@
 import re
 from string import whitespace
 from newsapi import NewsApiClient
-from constant import *
 
 def callApi(preference):
 
@@ -11,7 +10,7 @@ def callApi(preference):
 
     #API set preference
 
-    call = {'q':None, 'sources':None, 'domains':None, 'from':None, 'to':None, 'language':'en', 'sort_by':None, 'country':None, 'category':None, 'page_size':None,'page':None}
+   call = {'q':None, 'sources':None, 'domains':None, 'from':None, 'to':None, 'language':'en', 'sort_by':None, 'country':None, 'category':None, 'page_size':None,'page':None}
 
     for key in preference.keys():
         call[key] = preference[key]
@@ -37,13 +36,14 @@ def callApi(preference):
         page
 
     '''
-   # response = newsapi.get_everything(q=call['q'],sources=call['sources'],domains=call['domains'],from_param=call['from'],to=call['to'],language=call['language'],sort_by=call['sort_by'],page_size=call['page_size'],page=call['page'])
+    response = newsapi.get_everything(q=call['q'],sources=call['sources'],domains=call['domains'],from_param=call['from'],to=call['to'],language=call['language'],sort_by=call['sort_by'],page_size=call['page_size'],page=call['page'])
 
 #    url = "https://newsapi.org/v2/top_headlines?q="+preference+"&from=2019-02-09&sortBy=publishedAt&apiKey=60941ffff9a04202b7b6f8124c3a2a46";
     urls = {}
 #    response = requests.get(url)
 
     return response
+
 
 
 def calculateWordCount(content):
@@ -86,3 +86,17 @@ def dictionaryCount(dictionary):
     return count
 
 #callApi("URI")
+
+def calculateTime(origin, destination):
+
+    # Requires Origin, Destination, and API Key
+    api_key = 'AIzaSyCniFFksn64_39YvSETuB-zVBjtMk5Xrb4'
+
+    #Optional parameters for driving or walking
+    mode = 'driving'
+
+    url = "https://maps.googleapis.com/maps/api/distancematrix/json?origins="+origin+"&destinations="+destination+"&mode="+mode+"&key="+api_key
+
+    response = request.get(url)
+
+    return response
