@@ -1,4 +1,6 @@
 import json
+from constant import *
+from wbCrawl import *
 from urllib.request import urlopen
 
 def getPreference(preference, time):
@@ -10,22 +12,22 @@ def getPreference(preference, time):
         print("Error has occurred")
     else:
         for i in range(response.json()["totalResults"]):
-            
+
 
             wordCount  = calculateWordCount(response.json()["articles"][i]["url"])
-            if wordCount/time < 225:
+            if wordCount/time < READING_SPEED:
                 url = {}
                 url["url"] = response.json()["articles"][i]["url"]
-                
+
                 url["wordCount"] = wordCount
                 urls[counter] = url
                 counter = counter + 1
                 urlCounter = i
-                if counter >10:
+                if counter > MAX_NUM_ARTICLES:
                     break
-            
+
     urls["counter"] = urlCounter
-        
+
     return urls
 
 def getMore(preference, time, counter):
@@ -38,17 +40,17 @@ def getMore(preference, time, counter):
         for i in range(counter ,response.json()["totalResults"]):
 
             wordCount  = calculateWordCount(response.json()["articles"][i]["url"])
-            if wordCount/time < 225:
+            if wordCount/time < READING_SPEED:
                 url = {}
                 url["url"] = response.json()["articles"][i]["url"]
-                
+
                 url["wordCount"] = wordCount
                 urls[count] = url
                 counter  = i
                 count = count + 1
-                if count >counter10Terminate:
+                if count > MAX_NUM_ARTICLES:
                     break
-            
+
     urls["counter"] = counter
-        
+
     return urls
