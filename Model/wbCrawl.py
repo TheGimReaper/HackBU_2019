@@ -30,8 +30,8 @@ def dictionaryCount(dictionary):
     for key in dictionary:
         #skip key on empty stirng
         index = 0;
-        while((index < len(key) && (key[index] in whitespace)):
-            index++
+        while((index < len(key)) and (key[index] in whitespace)):
+            index = index + 1
         if(index != len(key)):
             count = count + dictionary[key]
     return count
