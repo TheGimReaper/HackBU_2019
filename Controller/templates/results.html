@@ -24,10 +24,10 @@ html, body
 
 .search_bar {
 	padding: 10px 16px;
+
 	height: 80px;
 	background: lightblue url(https://i.pinimg.com/236x/ce/09/77/ce0977be93860c8325d87655bb089a87--neon-flowers-pretty-flowers.jpg);
 	background-repeat: no-repeat;
-	background-
 	background-attachment: fixed;
 	color: #f1f1f1;
 }
@@ -51,6 +51,7 @@ html, body
 }
 
 
+
 .sticky {
   position: fixed;
   top: 0;
@@ -71,9 +72,7 @@ html, body
 
 	<div class="search_bar" id="sb">
 		<div class="search_elem" id="se">
-			<form action = "/action-page.php">
-				Key Words: <input type = "text" name = "search"> <br>
-			</form>
+			<button type="button" onclick=location.href="file:///C:/Users/Alison%20Gim/Documents/Projects/HackBU_2019/front_page3.html">Clear</button>
 		</div>
 	</div>
 
@@ -177,7 +176,7 @@ html, body
 	document.getElementById("l").href=value['url'];
 	document.getElementById("t").innerHTML = "Title: " + value['title'];
 	document.getElementById("a").innerHTML = "Author: " + value['author'];
-	document.getElementById("rt").innerHTML = "Average Read Time (minutes): " +value['readTime'];
+	document.getElementById("rt").innerHTML = "Average Read Time (minutes): " + parseInt(value['readTime'] + .5);
 	
 
 	var value = obj["1"];
@@ -185,7 +184,7 @@ html, body
 	document.getElementById("l1").href=value['url'];
 	document.getElementById("t1").innerHTML = "Title: " + value['title'];
 	document.getElementById("a1").innerHTML = "Author: " + value['author'];
-	document.getElementById("rt1").innerHTML = "Average Read Time (minutes): " +value['readTime'];
+	document.getElementById("rt1").innerHTML = "Average Read Time (minutes): " + parseInt(value['readTime'] + .5);
 
 
 	var value = obj["2"];
@@ -193,7 +192,7 @@ html, body
 	document.getElementById("l2").href=value['url'];
 	document.getElementById("t2").innerHTML = "Title: " + value['title'];
 	document.getElementById("a2").innerHTML = "Author: " + value['author'];
-	document.getElementById("rt2").innerHTML = "Average Read Time (minutes): " +value['readTime'];
+	document.getElementById("rt2").innerHTML = "Average Read Time (minutes): " + parseInt(value['readTime'] + .5);
 
 
 	var value = obj["3"];
@@ -201,7 +200,7 @@ html, body
 	document.getElementById("l3").href=value['url'];
 	document.getElementById("t3").innerHTML = "Title: " + value['title'];
 	document.getElementById("a3").innerHTML = "Author: " + value['author'];
-	document.getElementById("rt3").innerHTML = "Average Read Time (minutes): " +value['readTime'];
+	document.getElementById("rt3").innerHTML = "Average Read Time (minutes): " + parseInt(value['readTime'] + .5);
 
 
 	var value = obj["4"];
@@ -209,7 +208,7 @@ html, body
 	document.getElementById("l4").href=value['url'];
 	document.getElementById("t4").innerHTML = "Title: " + value['title'];
 	document.getElementById("a4").innerHTML = "Author: " + value['author'];
-	document.getElementById("rt4").innerHTML = "Average Read Time (minutes): " +value['readTime'];
+	document.getElementById("rt4").innerHTML = "Average Read Time (minutes): " + parseInt(value['readTime'] + .5);
 
 
 	var value = obj["5"];
@@ -217,7 +216,7 @@ html, body
 	document.getElementById("l5").href=value['url'];
 	document.getElementById("t5").innerHTML = "Title: " + value['title'];
 	document.getElementById("a5").innerHTML = "Author: " + value['author'];
-	document.getElementById("rt5").innerHTML = "Average Read Time (minutes): " +value['readTime'];
+	document.getElementById("rt5").innerHTML = "Average Read Time (minutes): " + parseInt(value['readTime'] + .5);
 
 
 	var value = obj["6"];
@@ -225,7 +224,7 @@ html, body
 	document.getElementById("l6").href=value['url'];
 	document.getElementById("t6").innerHTML = "Title: " + value['title'];
 	document.getElementById("a6").innerHTML = "Author: " + value['author'];
-	document.getElementById("rt6").innerHTML = "Average Read Time (minutes): " +value['readTime'];
+	document.getElementById("rt6").innerHTML = "Average Read Time (minutes): " + parseInt(value['readTime'] + .5);
 
 
 	var value = obj["7"];
@@ -233,7 +232,7 @@ html, body
 	document.getElementById("l7").href=value['url'];
 	document.getElementById("t7").innerHTML = "Title: " + value['title'];
 	document.getElementById("a7").innerHTML = "Author: " + value['author'];
-	document.getElementById("rt7").innerHTML = "Average Read Time (minutes): " +value['readTime'];
+	document.getElementById("rt7").innerHTML = "Average Read Time (minutes): " + parseInt(value['readTime'] + .5);
 
 
 	var value = obj["8"];
@@ -241,7 +240,7 @@ html, body
 	document.getElementById("l8").href=value['url'];
 	document.getElementById("t8").innerHTML = "Title: " + value['title'];
 	document.getElementById("a8").innerHTML = "Author: " + value['author'];
-	document.getElementById("rt8").innerHTML = "Average Read Time (minutes): " +value['readTime'];
+	document.getElementById("rt8").innerHTML = "Average Read Time (minutes): " + parseInt(value['readTime'] + .5);
 
 
 	var value = obj["9"];
@@ -249,7 +248,7 @@ html, body
 	document.getElementById("l9").href=value['url'];
 	document.getElementById("t9").innerHTML = "Title: " + value['title'];
 	document.getElementById("a9").innerHTML = "Author: " + value['author'];
-	document.getElementById("rt9").innerHTML = "Average Read Time (minutes): " +value['readTime'];
+	document.getElementById("rt9").innerHTML = "Average Read Time (minutes): " + parseInt(value['readTime'] + .5);
 
 
 	</script>

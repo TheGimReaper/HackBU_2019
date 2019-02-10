@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html, body 
+{
+    margin: 0;
+    height: 100%;
+    background-image: url("https://c.stocksy.com/a/kUn100/z9/428590.jpg?1549767790");
+}
+
+.main
+{
+    padding: 16px;
+    margin-top: 200px;
+}
+
+.card_left
+{
+    background-color: white;
+    color:#00b3b3;
+    width: 25%;
+    font-size: 20px;
+    height: 75%;
+    float: left;
+    font-family:'Courier New', Courier, monospace;
+    margin-left: 15%;
+    margin-top: 6%;
+    opacity: .7;
+}
+
+
+.card_right
+{
+    background-color: white;
+    color: #00b3b3;
+    width: 25%;
+    font-size: 20px;
+    height: 75%;
+    float: right;
+    font-family:'Courier New', Courier, monospace;
+    margin-right: 15%;
+    margin-top: 6%;
+    opacity: 0.7;
+}
+
+.card_left p
+{
+    margin-left:120px;
+    margin-top: 250px;
+    float: center;
+
+}
+
+.card_right p
+{
+    margin-left:100px;
+    margin-top: 250px;
+    float: center;
+
+}
+
+.card_left:hover
+{
+    transition: 0.3s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+}
+.card_right:hover
+{
+    transition: 0.3s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+}
+
+.hidden_time_element
+{
+    background-color: white;
+    color: #00b3b3;
+    width: 400px;
+    font-size: 20px;
+    font-family:'Courier New', Courier, monospace;   
+    position: relative;
+    bottom: 150px;
+    left: 500px;
+    visibility: hidden;
+}
+
+.hidden_location_element
+{
+    background-color: white;
+    color: #00b3b3;
+    font-size: 20px;
+    float: right;
+    width: 400px;
+    font-family:'Courier New', Courier, monospace;
+    position: relative;
+    bottom: 200px;
+    right: 50px;
+    visibility: hidden;
+
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div class = "card_left" id="b" onclick="myClick('b')">
+<strong></strong><p>Search By Time</p>
+<div class = "hidden_time_element" id = "hl">
+    <form action = "file:///C:/Users/Alison%20Gim/Documents/Projects/HackBU_2019/results.html">
+        <pre>Key Words: <input type = "text" name = "search"> </pre> <br>
+        <pre>Read Time: <input type = "text" name = "to"></pre> <br>
+        <input type = "submit">
+    
+    </form>
+</div>
+
+</div>
+
+
+<div class = "card_right" id="d" onclick="myClick('d')">
+    <p>Search By Location</p>
+    <div class = "hidden_location_element" id = "hle">
+        <form action = "file:///C:/Users/Alison%20Gim/Documents/Projects/HackBU_2019/results.html">
+            <pre>Key Words: <input type = "text" name = "search"> </pre> <br>
+            <pre>Origin: <input type = "text" name = "search"> </pre> <br>
+            <pre>Destination: <input type = "text" name = "search"> </pre> <br>
+            <input type = "submit">
+        
+        </form>
+    </div>
+</div>
+
+
+<script>
+function myClick(idn) {
+    var my_card = document.getElementById(idn);
+    if(idn == 'd') {
+        var other_card = document.getElementById("b");
+        other_card.style.width = "0%";
+        other_card.style.opacity = "0";
+        my_card.style.width = "70%";
+        var hidden_loc = document.getElementById("hle");
+        hidden_loc.style.visibility = "visible";
+    }
+    else
+    {
+        var other_card = document.getElementById("d");
+        other_card.style.width = "0%";
+        other_card.style.opacity = "0";
+        my_card.style.width = "70%";
+        var hidden_loc = document.getElementById("hl");
+        hidden_loc.style.visibility = "visible";
+    }
+}
+</script>
+
+</body>
+</html>
+
