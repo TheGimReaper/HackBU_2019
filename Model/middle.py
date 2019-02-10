@@ -12,8 +12,10 @@ def getPreference(preference, time):
     if response["status"] != "ok":
         print("Error has occurred")
     else:
-        for i in range(response["totalResults"]):
-
+        pagecount = response["totalResults"]
+        if(pagecount > PAGE_SIZE):
+             pagecount = PAGE_SIZE
+        for i in range(pagecount):
 
             wordCount  = calculateWordCount(response["articles"][i]["content"])
             if wordCount/time < READING_SPEED:
