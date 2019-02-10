@@ -1,4 +1,5 @@
 import requests
+import re
 from bs4 import BeautifulSoup
 from collections import Counter
 from string import punctuation
@@ -12,7 +13,7 @@ def callApi(preference):
 
     #API set preference
 
-    call = {'q':None, 'sources':None, 'domains':None, 'from':None, 'to':None, 'language':'en', 'sort_by':None, 'country':None, 'category':None, 'page_size':None,'page':None}
+#    call = {'q':None, 'sources':None, 'domains':None, 'from':None, 'to':None, 'language':'en', 'sort_by':None, 'country':None, 'category':None, 'page_size':None,'page':None}
 
     for key in preference.keys():
         call[key] = preference[key]
@@ -47,19 +48,25 @@ def callApi(preference):
     return response
 
 
-def calculateWordCount(url):
+def calculateWordCount(content):
 
-    r = requests.get(url)
-    soup = BeautifulSoup(r.content, features="html.parser")
+    char_counter = 0
+    characters = re.sub('[+* chars]$','',content)
+    char_counter = (int)content[len(characters)+2:-7] + len(characters)
+    return char_counter/WORD_SIZE
 
-    text_p = (''.join(s.findAll(text=True)) for s in soup.findAll('p'))
-    c_p = Counter((x.rstrip(punctuation).lower() for y in text_p for x in y.split()))
 
-    text_div = (''.join(s.findAll(text=True)) for s in soup.findAll('div'))
-    c_div = Counter((x.rstrip(punctuation).lower() for y in text_div for x in y.split()))
-
-    total = c_div + c_p
-    return dictionaryCount(total)
+    # r = requests.get(url)
+    # soup = BeautifulSoup(r.content, features="html.parser")
+    #
+    # text_p = (''.join(s.findAll(text=True)) for s in soup.findAll('p'))
+    # c_p = Counter((x.rstrip(punctuation).lower() for y in text_p for x in y.split()))
+    #
+    # text_div = (''.join(s.findAll(text=True)) for s in soup.findAll('div'))
+    # c_div = Counter((x.rstrip(punctuation).lower() for y in text_div for x in y.split()))
+    #
+    # total = c_div + c_p
+    # return dictionaryCount(total)
 
 def dictionaryCount(dictionary):
     count = 0
