@@ -15,7 +15,9 @@ app.config['SECRET_KEY'] = "hush"
 
 #@app.route('/search')
 def search(time,preference):
-    return json.dumps(getPreference(preference,time))
+	searchDic = {}
+	searchDic['q'] = preference
+	return json.dumps(getPreference(searchDic,time))
 
 class UserForm(Form):
 	r_time = IntegerField('Desired Read Time', validators=[NumberRange(min=1)])

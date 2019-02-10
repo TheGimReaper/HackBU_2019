@@ -9,20 +9,23 @@ def getPreference(preference, time):
     urls = {}
     counter = 0
     urlCounter = 0
-    if response.json()["status"] != "ok":
+    if response["status"] != "ok":
         print("Error has occurred")
     else:
-        for i in range(response.json()["totalResults"]):
+        pageCount = response["totalResults"]
+        if(pageCount > 20):
+            pageCount = 20
+        for i in range(pageCount):
 
-
-            wordCount  = calculateWordCount(response.json()["articles"][i]["url"])
+            #wordCount  = calculateWordCount(response["articles"][i]["url"])
+            wordCount = 20
             if wordCount/time < READING_SPEED:
                 url = {}
-                url["url"] = response.json()["articles"][i]["url"]
-                url["title"] = response.json()["articles"][i]["title"]
-                url["author"] = response.json()["articles"][i]["author"]
-                url["source"] = response.json()["articles"][i]["source"]["name"]
-                url["urlToImage"] = response.json()["articles"][i]["urlToImage"]
+                url["url"] = response["articles"][i]["url"]
+                url["title"] = response["articles"][i]["title"]
+                url["author"] = response["articles"][i]["author"]
+                url["source"] = response["articles"][i]["source"]["name"]
+                url["urlToImage"] = response["articles"][i]["urlToImage"]
                 url["readTime"] = wordCount/READING_SPEED
                 url["wordCount"] = wordCount
                 urls[counter] = url
@@ -39,15 +42,15 @@ def getMore(preference, time, counter):
     response = callApi(preference)
     urls = {}
     count = 0
-    if  response.json()["status"] != "ok":
+    if  response["status"] != "ok":
         print("Error has occurred")
     else:
-        for i in range(counter ,response.json()["totalResults"]):
+        for i in range(counter ,response["totalResults"]):
 
-            wordCount  = calculateWordCount(response.json()["articles"][i]["url"])
+            wordCount  = calculateWordCount(response["articles"][i]["url"])
             if wordCount/time < READING_SPEED:
                 url = {}
-                url["url"] = response.json()["articles"][i]["url"]
+                url["url"] = response["articles"][i]["url"]
 
                 url["wordCount"] = wordCount
                 urls[count] = url
