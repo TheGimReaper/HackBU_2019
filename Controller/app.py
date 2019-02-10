@@ -11,6 +11,7 @@ sys.path.append(dir_path+'/../Model')
 from middle import *
 
 app = Flask(__name__)
+
 app.config['SECRET_KEY'] = "hush"
 
 #@app.route('/search')

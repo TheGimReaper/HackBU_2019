@@ -5,6 +5,7 @@ from collections import Counter
 from string import punctuation
 from string import whitespace
 from newsapi import NewsApiClient
+from constant import *
 
 def callApi(preference):
 
@@ -13,7 +14,7 @@ def callApi(preference):
 
     #API set preference
 
-#    call = {'q':None, 'sources':None, 'domains':None, 'from':None, 'to':None, 'language':'en', 'sort_by':None, 'country':None, 'category':None, 'page_size':None,'page':None}
+    call = {'q':None, 'sources':None, 'domains':None, 'from':None, 'to':None, 'language':'en', 'sort_by':None, 'country':None, 'category':None, 'page_size':None,'page':None}
 
     for key in preference.keys():
         call[key] = preference[key]
@@ -51,9 +52,17 @@ def callApi(preference):
 def calculateWordCount(content):
 
     char_counter = 0
-    characters = re.sub('[+* chars]$','',content)
-    char_counter = (int)content[len(characters)+2:-7] + len(characters)
-    return char_counter/WORD_SIZE
+   # content_copy = content[:]
+    characters = re.sub('\[\+[0-9]* chars\]$','',str(content))
+    num_count_length = 0
+    if(str(characters) != str(content)):
+        num_count = content[len(characters)+2:-7]
+
+        for c in num_count:
+            num_count_length = num_count_length*10 + int(c)
+
+    char_counter = num_count_length + len(characters)
+    return int(char_counter/WORD_SIZE)
 
 
     # r = requests.get(url)
