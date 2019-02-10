@@ -12,8 +12,9 @@ app = Flask(__name__)
 def index():
     return json.dumps(getPreference('India',80))
 
+@app.route('/home')
 def home():
-    return render_template(dir_path+"/../View/template/index.html")
+    return render_template(dir_path+"/../View/index.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
