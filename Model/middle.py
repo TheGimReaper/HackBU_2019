@@ -84,7 +84,7 @@ def getTime(start_location, end_location):
     if response["status"] != "OK":
         print("Error has occurred")
     else:
-        time_sec = response["rows"]][0]["elements"]["duration"]["value"]
+        time_sec = response["rows"][0]["elements"]["duration"]["value"]
         time_min = int(time_sec/60)
 
     return time_min

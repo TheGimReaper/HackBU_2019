@@ -10,7 +10,7 @@ Convention for constant variables declared within this class as follows:
 READING_SPEED = 255
 
 # Max number of articles to use
-MAX_NUM_ARTICLES = 40
+MAX_NUM_ARTICLES = 30
 
 # Page size for the news API get articles
 PAGE_SIZE = 100

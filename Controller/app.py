@@ -15,13 +15,13 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = "hush"
 
 #@app.route('/search')
-def search(time,preference,page=None,category=None,domains=None,from=None,to=None,language='en',sort_by=None):
+def search(time,preference,page=None,category=None,domains=None,froms=None,to=None,language='en',sort_by=None,country=None):
 	searchDic = {}
 	searchDic['q'] = preference
 	searchDic['page'] = page
 	searchDic['category'] = category
 	searchDic['domains'] = domains
-	searchDic['from'] = from
+	searchDic['from'] = froms
 	searchDic['to'] = to
 	searchDic['country'] = country
 	searchDic['language'] = language

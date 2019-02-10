@@ -25,7 +25,7 @@ def callApi(preference):
     '''
 
     #API call for top headline articles
-    response = newsapi.get_top_headlines(q=call['q'],sources=call['sources'],country=call['country'],category=call['category'],page_size=call['page_size'],page=call['page'])
+    response = newsapi.get_top_headlines(q=call['q'],sources=call['sources'],country=call['country'],category=call['category'],page_size=PAGE_SIZE,page=call['page'])
 
     #API call for all news articles
     '''     GET EVERYTHING CALL CAN TAKE FOLLOWING
@@ -37,7 +37,7 @@ def callApi(preference):
         page
 
     '''
-    response = newsapi.get_everything(q=call['q'],sources=call['sources'],domains=call['domains'],from_param=call['from'],to=call['to'],language=call['language'],sort_by=call['sort_by'],page_size=call['page_size'],page=call['page'])
+    response = newsapi.get_everything(q=call['q'],sources=call['sources'],domains=call['domains'],from_param=call['from'],to=call['to'],language=call['language'],sort_by=call['sort_by'],page_size=PAGE_SIZE,page=call['page'])
 
 #    url = "https://newsapi.org/v2/top_headlines?q="+preference+"&from=2019-02-09&sortBy=publishedAt&apiKey=60941ffff9a04202b7b6f8124c3a2a46";
     urls = {}
