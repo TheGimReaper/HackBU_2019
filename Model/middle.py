@@ -3,7 +3,7 @@ from constant import *
 from wbCrawl import *
 from urllib.request import urlopen
 from wbCrawl import *
-
+from constant import *
 def getPreference(preference, time):
     response = callApi(preference)
     urls = {}
@@ -15,7 +15,7 @@ def getPreference(preference, time):
         for i in range(response["totalResults"]):
 
 
-            wordCount  = calculateWordCount(response["articles"][i]["url"])
+            wordCount  = calculateWordCount(response["articles"][i]["content"])
             if wordCount/time < READING_SPEED:
                 url = {}
                 url["url"] = response["articles"][i]["url"]
