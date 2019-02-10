@@ -1,5 +1,6 @@
 
 import re
+from constant import *
 from string import whitespace
 from newsapi import NewsApiClient
 from constant import *
@@ -25,7 +26,7 @@ def callApi(preference):
     '''
 
     #API call for top headline articles
-    response = newsapi.get_top_headlines(q=call['q'],sources=call['sources'],country=call['country'],category=call['category'],page_size=call['page_size'],page=call['page'])
+    response = newsapi.get_top_headlines(q=call['q'],sources=call['sources'],country=call['country'],category=call['category'],page_size=PAGE_SIZE,page=call['page'])
 
     #API call for all news articles
     '''     GET EVERYTHING CALL CAN TAKE FOLLOWING

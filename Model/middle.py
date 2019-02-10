@@ -27,7 +27,7 @@ def getPreference(preference, time):
                 url["author"] = response["articles"][i]["author"]
                 url["source"] = response["articles"][i]["source"]["name"]
                 url["urlToImage"] = response["articles"][i]["urlToImage"]
-                url["readTime"] = wordCount/READING_SPEED
+                url["readTime"] = int(wordCount/READING_SPEED)
                 url["wordCount"] = wordCount
                 urls["articles"].append(url)
                 counter = counter + 1
@@ -81,7 +81,7 @@ def getTime(start_location, end_location):
 
     response = calculateTime(origin, destination)
 
-    if response.json()["status"] != "OK":
+    if response["status"] != "OK":
         print("Error has occurred")
     else:
         time_sec = response["rows"][0]["elements"]["duration"]["value"]
