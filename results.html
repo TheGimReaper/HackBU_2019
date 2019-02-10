@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html>
+<title>Recommendations</title>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+html, body
+{
+	margin:0;
+	height:100%;
+	background-image: url();
+
+
+}
+
+.main
+{
+	padding: 16px;
+	margin-top: 200px;
+}
+
+
+.search_bar {
+	padding: 10px 16px;
+	height: 80px;
+	background: lightblue url(https://i.pinimg.com/236x/ce/09/77/ce0977be93860c8325d87655bb089a87--neon-flowers-pretty-flowers.jpg);
+	background-repeat: no-repeat;
+	background-
+	background-attachment: fixed;
+	color: #f1f1f1;
+}
+
+.search_elem {
+	font-family: 'Courier New', Courier, monospace;
+}
+
+.result {
+  padding: 16px;
+}
+
+.result_elem {
+	background-color: white;
+	color: black;
+	margin: 30px;
+	padding: 1px;
+	width: 80%;
+	height: 15em;
+	
+}
+
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .result + .result_elem {
+  padding-top: 102px;
+}
+
+
+</style>
+
+
+</head>
+
+<body>
+
+	<div class="search_bar" id="sb">
+		<div class="search_elem" id="se">
+			<form action = "/action-page.php">
+				Key Words: <input type = "text" name = "search"> <br>
+			</form>
+		</div>
+	</div>
+
+	<div class="result">
+		<div class="result_elem">
+			<a id="l"><img id="p" style="width:20%"></a>
+			<p id="t"></p>
+			<p id="a"></p>
+			<p id="rt"></p>
+			
+		</div>
+		<div class="result_elem">
+			<a id="l1"><img id="p1" style="width:20%"></a>
+			<p id="t1"></p>
+			<p id="a1"></p>
+			<p id="rt1"></p>
+
+		</div>
+		<div class="result_elem">
+			<a id="l2"><img id="p2" style="width:20%"></a>
+			<p id="t2"></p>
+			<p id="a2"></p>
+			<p id="rt2"></p>
+
+		</div>
+		<div class="result_elem">
+			<a id="l3"><img id="p3" style="width:20%"></a>
+			<p id="t3"></p>
+			<p id="a3"></p>
+			<p id="rt3"></p>
+
+		</div>
+		<div class="result_elem">
+			<a id="l4"><img id="p4" style="width:20%"></a>
+			<p id="t4"></p>
+			<p id="a4"></p>
+			<p id="rt4"></p>
+
+		</div>
+		<div class="result_elem">
+			<a id="l5"><img id="p5" style="width:20%"></a>
+			<p id="t5"></p>
+			<p id="a5"></p>
+			<p id="rt5"></p>
+
+		</div>
+		<div class="result_elem">
+			<a id="l6"><img id="p6" style="width:20%"></a>
+			<p id="t6"></p>
+			<p id="a6"></p>
+			<p id="rt6"></p>
+
+		</div>
+		<div class="result_elem">
+			<a id="l7"><img id="p7" style="width:20%"></a>
+			<p id="t7"></p>
+			<p id="a7"></p>
+			<p id="rt7"></p>
+
+		</div>
+		<div class="result_elem">
+			<a id="l8"><img id="p8" style="width:20%"></a>
+			<p id="t8"></p>
+			<p id="a8"></p>
+			<p id="rt8"></p>
+
+		</div>
+		<div class="result_elem">
+			<a id="l9"><img id="p9" style="width:20%"></a>
+			<p id="t9"></p>
+			<p id="a9"></p>
+			<p id="rt9"></p>
+
+		</div>
+	</div>
+
+	<script>
+	var js = '{"0": {"url": "https://www.news18.com/cricketnext/news/india-vs-new-zealand-live-cricket-score-3rd-t20i-at-hamilton-kiwis-look-to-start-aggressively-2030875.html", "source": "Google News (India)", "title": "India vs New Zealand, Live Cricket Score, 3rd T20I at Hamilton: Kiwis Look to Start Aggressively", "readTime": 2.3137254901960786, "urlToImage": "https://images.news18.com/ibnlive/uploads/761x506/jpg/2018/07/kuldeep-yadav.jpg", "wordCount": 590, "author": "Cricketnext Staff"}, "1": {"url": "https://www.thehindu.com/sport/cricket/live-scorecard-india-tour-of-new-zealand-new-zealand-vs-india-third-t20-international-in-hamilton/article26228931.ece", "source": "The Hindu", "title": "Live | India vs New Zealand 3rd T20I", "readTime": 0.4627450980392157, "urlToImage": "https://www.thehindu.com/news/eabqt/article26072468.ece/ALTERNATES/LANDSCAPE_615/vbk-nz-ind", "wordCount": 118, "author": "The Hindu Net Desk"}, "2": {"url": "http://www.espncricinfo.com/story/_/id/25962774/ricky-ponting-confidence-injection-australia-world-cup-campaign", "source": "ESPN Cric Info", "title": "Pontings confidence injection for Australias World Cup campaign", "readTime": 4.631372549019608, "urlToImage": "https://a4.espncdn.com/combiner/i?img=%2Fi%2Fcricket%2Fcricinfo%2F1172752_1296x729.jpg", "wordCount": 1181, "author": null}, "3": {"url": "http://www.espncricinfo.com/cricket/series/18819/game/1153860/new-zealand-women-vs-india-women-3rd-t20i-india-women-in-nz-2018-19", "source": "ESPN Cric Info", "title": "NZ-W 98/2 (12.3 ov, SFM Devine 48*, AE Satterthwaite 12*, Poonam Yadav 1/17) - Live - New Zealand Women vs India Women 3rd T20I Match Live Score, Summary | ESPNcricinfo.com", "readTime": 0.2, "urlToImage": "https://a.espncdn.com/combiner/i?img=/i/espn/espn_logos/espncricinfo.png", "wordCount": 51, "author": null}, "4": {"url": "https://video.foxnews.com/v/6000408892001/", "source": "Fox News", "title": "Diamond & Silk on Sen. Elizabeth Warrens latest heritage controversy", "readTime": 0.0, "urlToImage": "https://a57.foxnews.com/media2.foxnews.com/BrightCove/694940094001/2019/02/10/640/360/694940094001_6000404165001_6000408892001-vs.jpg", "wordCount": 0, "author": "Fox News"}, "5": {"url": "http://timesofindia.indiatimes.com/sports/cricket/india-in-new-zealand/india-vs-new-zealand-live-score-3rd-t20i/articleshow/67924876.cms", "source": "The Times of India", "title": "India vs New Zealand Live Score, 3rd T20I: India opt to bowl in series-decider - Times of India", "readTime": 1.3176470588235294, "urlToImage": "https://static.toiimg.com/thumb/msid-67924985,width-1070,height-580,imgsize-1203736,resizemode-6,overlay-toi_sw,pt-32,y_pad-40/photo.jpg", "wordCount": 336, "author": null}, "6": {"url": "http://timesofindia.indiatimes.com/india/abu-dhabi-includes-hindi-as-third-official-court-language/articleshow/67925348.cms", "source": "The Times of India", "title": "Abu Dhabi includes Hindi as third official court language - Times of India", "readTime": 1.8431372549019607, "urlToImage": "https://static.toiimg.com/thumb/msid-67925372,width-1070,height-580,imgsize-141901,resizemode-6,overlay-toi_sw,pt-32,y_pad-40/photo.jpg", "wordCount": 470, "author": null}, "7": {"url": "http://timesofindia.indiatimes.com/city/ahmedabad/fbi-in-city-over-con-call-centres/articleshow/67920562.cms", "source": "The Times of India", "title": "FBI team in Ahmedabad over con call centres - Times of India", "readTime": 0.0, "urlToImage": "https://static.toiimg.com/thumb/msid-67922553,width-1070,height-580,imgsize-1294446,resizemode-6,overlay-toi_sw,pt-32,y_pad-40/photo.jpg", "wordCount": 0, "author": "Sarfaraz Shaikh"}, "8": {"url": "http://timesofindia.indiatimes.com/india/rajeev-kumar-faces-cbi-for-7-hours-things-may-get-tough-today/articleshow/67922014.cms", "source": "The Times of India", "title": "Rajeev Kumar faces CBI for 7 hours, things may get tough today - Times of India \u25ba", "readTime": 3.3176470588235296, "urlToImage": "https://static.toiimg.com/thumb/msid-67922044,width-1070,height-580,imgsize-1391941,resizemode-6,overlay-toi_sw,pt-32,y_pad-40/photo.jpg", "wordCount": 846, "author": "Rohit Khanna"}, "9": {"url": "http://timesofindia.indiatimes.com/city/ahmedabad/tiger-zinda-hai-striped-big-cat-spotted-in-gujarat-after-27-yrs/articleshow/67922539.cms", "source": "The Times of India", "title": "Tiger zinda hai! Striped big cat spotted in Gujarat after 27 years - Times of India", "readTime": 2.015686274509804, "urlToImage": "https://static.toiimg.com/thumb/msid-67923697,width-1070,height-580,imgsize-155886,resizemode-6,overlay-toi_sw,pt-32,y_pad-40/photo.jpg", "wordCount": 514, "author": "Himanshu Kaushik"}, "10": {"url": "https://www.thehindu.com/opinion/columns/a-compass-for-navigating-contemporary-art/article26225940.ece", "source": "The Hindu", "title": "A compass for navigating contemporary art", "readTime": 4.043137254901961, "urlToImage": "https://www.thehindu.com/opinion/columns/89s5m0/article26225938.ece/ALTERNATES/LANDSCAPE_615/10THINDIAARTFAIR", "wordCount": 1031, "author": "Ruchir Joshi"}, "counter": 10}'
+	var obj = JSON.parse(js);
+	/*
+	for(var key in obj) {
+		if (obj.hasOwnProperty(key)) {
+			var value=obj[key];
+			document.getElementById("t").innerHTML = "Title: " + value['title'];
+			document.getElementById("a").innerHTML = "Author: " + value['author'];
+			document.getElementById("rt").innerHTML = "Average Read Time (minutes): " +value['readTime'];
+			document.getElementById("l").href=value['url'];
+		}
+	}
+	*/
+	var value = obj["0"];
+	document.getElementById("p").src = value['urlToImage'];
+	document.getElementById("l").href=value['url'];
+	document.getElementById("t").innerHTML = "Title: " + value['title'];
+	document.getElementById("a").innerHTML = "Author: " + value['author'];
+	document.getElementById("rt").innerHTML = "Average Read Time (minutes): " +value['readTime'];
+	
+
+	var value = obj["1"];
+	document.getElementById("p1").src = value['urlToImage'];
+	document.getElementById("l1").href=value['url'];
+	document.getElementById("t1").innerHTML = "Title: " + value['title'];
+	document.getElementById("a1").innerHTML = "Author: " + value['author'];
+	document.getElementById("rt1").innerHTML = "Average Read Time (minutes): " +value['readTime'];
+
+
+	var value = obj["2"];
+	document.getElementById("p2").src = value['urlToImage'];
+	document.getElementById("l2").href=value['url'];
+	document.getElementById("t2").innerHTML = "Title: " + value['title'];
+	document.getElementById("a2").innerHTML = "Author: " + value['author'];
+	document.getElementById("rt2").innerHTML = "Average Read Time (minutes): " +value['readTime'];
+
+
+	var value = obj["3"];
+	document.getElementById("p3").src = value['urlToImage'];
+	document.getElementById("l3").href=value['url'];
+	document.getElementById("t3").innerHTML = "Title: " + value['title'];
+	document.getElementById("a3").innerHTML = "Author: " + value['author'];
+	document.getElementById("rt3").innerHTML = "Average Read Time (minutes): " +value['readTime'];
+
+
+	var value = obj["4"];
+	document.getElementById("p4").src = value['urlToImage'];
+	document.getElementById("l4").href=value['url'];
+	document.getElementById("t4").innerHTML = "Title: " + value['title'];
+	document.getElementById("a4").innerHTML = "Author: " + value['author'];
+	document.getElementById("rt4").innerHTML = "Average Read Time (minutes): " +value['readTime'];
+
+
+	var value = obj["5"];
+	document.getElementById("p5").src = value['urlToImage'];
+	document.getElementById("l5").href=value['url'];
+	document.getElementById("t5").innerHTML = "Title: " + value['title'];
+	document.getElementById("a5").innerHTML = "Author: " + value['author'];
+	document.getElementById("rt5").innerHTML = "Average Read Time (minutes): " +value['readTime'];
+
+
+	var value = obj["6"];
+	document.getElementById("p6").src = value['urlToImage'];
+	document.getElementById("l6").href=value['url'];
+	document.getElementById("t6").innerHTML = "Title: " + value['title'];
+	document.getElementById("a6").innerHTML = "Author: " + value['author'];
+	document.getElementById("rt6").innerHTML = "Average Read Time (minutes): " +value['readTime'];
+
+
+	var value = obj["7"];
+	document.getElementById("p7").src = value['urlToImage'];
+	document.getElementById("l7").href=value['url'];
+	document.getElementById("t7").innerHTML = "Title: " + value['title'];
+	document.getElementById("a7").innerHTML = "Author: " + value['author'];
+	document.getElementById("rt7").innerHTML = "Average Read Time (minutes): " +value['readTime'];
+
+
+	var value = obj["8"];
+	document.getElementById("p8").src = value['urlToImage'];
+	document.getElementById("l8").href=value['url'];
+	document.getElementById("t8").innerHTML = "Title: " + value['title'];
+	document.getElementById("a8").innerHTML = "Author: " + value['author'];
+	document.getElementById("rt8").innerHTML = "Average Read Time (minutes): " +value['readTime'];
+
+
+	var value = obj["9"];
+	document.getElementById("p9").src = value['urlToImage'];
+	document.getElementById("l9").href=value['url'];
+	document.getElementById("t9").innerHTML = "Title: " + value['title'];
+	document.getElementById("a9").innerHTML = "Author: " + value['author'];
+	document.getElementById("rt9").innerHTML = "Average Read Time (minutes): " +value['readTime'];
+
+
+	</script>
+
+
+	<script>
+
+	window.onscroll = function() {stickToTop()};
+
+	var bar = document.getElementById("sb");
+	var sticky = bar.offsetTop;
+
+	function stickToTop() {
+		if(window.pageYOffset > sticky) {
+			bar.classList.add("sticky");
+		} else {
+			bar.classList.remove("sticky");
+		}
+	}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
