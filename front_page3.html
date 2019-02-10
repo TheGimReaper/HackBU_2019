@@ -108,7 +108,7 @@ html, body
 <body>
 
 <div class = "card_left" id="b" onclick="myClick('b')">
-<strong></strong><p id = "sbt">Search By Time</p>
+<strong></strong><p>Search By Time</p>
 <div class = "hidden_time_element" id = "hl">
     <form action = "/action_page.php">
         <pre>Key Words: <input type = "text" name = "search"> </pre> <br>
@@ -148,11 +148,9 @@ function myClick(idn) {
     else
     {
         var other_card = document.getElementById("d");
-        var my_text = document.getElementByID("sbt");
         other_card.style.width = "0%";
         other_card.style.opacity = "0";
         my_card.style.width = "70%";
-        my_text.style.float = "right";
         var hidden_loc = document.getElementById("hl");
         hidden_loc.style.visibility = "visible";
     }
